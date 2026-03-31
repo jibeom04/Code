@@ -2,41 +2,35 @@
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
+    int n, max, sum, temp=0;
+    scanf("%d %d", &n, &max);
+
+    int nums[n];
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", &nums[i]);
+    }
 
     for(int i=0; i<n; i++)
     {
-        for(int j=i+1; j<n; j++)
+        sum+=nums[i];
+        for(int j=0; j<n; j++)
         {
-            printf(" ");
+            if(j==i) continue;
+            sum+=nums[j];
+            for(int k=0; k<n; k++)
+            {
+                if(k==i || k==j) continue;
+                sum+=nums[k];
+                if(temp < sum && sum <=max) temp = sum;
+                sum-=nums[k];
+            }
+            sum-=nums[j];
         }
-        for(int j=i*2+1; j>0; j--)
-        {
-            printf("*");
-        }
-        printf("\n");
+        sum-=nums[i];
     }
-    
-    for(int i=n-1; i>0; i--)
-    {
-        for(int j=i; j<n; j++)
-        {
-            printf(" ");
-        }
-        for(int j=i*2-1; j>0; j--)
-        {
-            printf("*");
-        }
-        printf("\n");
-    }
+
+    printf("%d", temp);
 
     return 0;
 }
-/*
-    *
-   ***
-  *****
- *******
-********
-*/

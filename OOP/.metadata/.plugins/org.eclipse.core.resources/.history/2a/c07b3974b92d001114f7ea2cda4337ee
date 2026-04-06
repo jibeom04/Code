@@ -1,0 +1,25 @@
+package testProject3;
+
+public class Assignment3_2 {
+
+	public static void main(String[] args) {
+		 
+
+	}
+	
+}
+
+class Overloading {
+	int sum(int a, int b) { return a + b; }
+	long sum(long a, long b) { return a + b; }
+	int sum(int[] a) {
+		int result = 0;
+		
+		for(int i=0; i<a.length; i++) {
+			result += a[i];
+		}
+		
+		return result;
+	}
+	int sum(int a) { return a + sum(a-1); }
+}

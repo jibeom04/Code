@@ -1,0 +1,37 @@
+package testProject3;
+
+public class Assignment3_2 {
+
+	public static void main(String[] args) {
+		int[] arr = {1, 2};
+		Overloading o = new Overloading();
+		 
+		System.out.println(o.sum(1, 2));
+		System.out.println(o.sum(1L, 2L));
+		System.out.println(o.sum(arr));
+		System.out.println(o.sum(2));
+
+	}
+	
+}
+
+class Overloading {
+	int sum(int a, int b) { return a + b; }
+	long sum(long a, long b) { return a + b; }
+	int sum(int[] a) {
+		int result = 0;
+		
+		for(int i=0; i<a.length; i++) {
+			result += a[i];
+		}
+		
+		return result;
+	}
+	int sum(int a) {
+		int result = 0;
+		if(a == 0) { result = 1; }
+		else { result = a + sum(a-1); }
+		
+		return result;
+	}
+}

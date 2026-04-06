@@ -1,0 +1,16 @@
+package testProject3;
+
+public class Assignment2_2 {
+
+	public static void main(String[] args) {
+		firstMethod();
+	}
+	
+	static void firstMethod() {
+		secondMethod();
+	}
+	
+	static void secondMethod() {
+		System.out.println("secodMethod()");
+	}
+}

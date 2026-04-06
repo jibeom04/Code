@@ -234,6 +234,12 @@ int main() {
                         push(inputString[i]);
                     }
                     basePush(top + 1 - inputSize);
+                    printf("\n");
+                    for(int i=0; i<10; i++)
+                    {
+                        printf("%d ", BaseStack[i]);
+                    }
+                    printf("\n");
                 }
                 break;
             }

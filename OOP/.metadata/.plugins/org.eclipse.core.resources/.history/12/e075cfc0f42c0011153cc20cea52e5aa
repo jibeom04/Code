@@ -1,0 +1,17 @@
+package testProject3;
+
+public class Argument2_1 {
+
+	public static void main(String[] args) {
+		System.out.println("card width: " +  Card.width);
+
+	}
+
+}
+
+class Card {
+	String kind;
+	int number;
+	static int width = 100;
+	static int height = 250;
+}

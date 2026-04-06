@@ -1,0 +1,29 @@
+package testProject3;
+
+public class Assignment3_1 {
+
+	public static void main(String[] args) {
+		System.out.println(MyMath.add(200L, 100L));
+		System.out.println(MyMath.subtract(200L, 100L));
+		System.out.println(MyMath.multiply(200L, 100L));
+		System.out.println(MyMath.divide(200L, 100L));
+		
+	}
+}
+
+class MyMath {
+	long a, b;  // 인스턴스 변수 생성
+	
+	// 인스턴스 메서드 생성. 인스턴스 변수 a, b만 이용하여 작업하므로 매개변수 불필요
+	long add() { return a + b; }
+	long subtract() { return a - b; }
+	long multiply() { return a - b;}
+	double divide() { return a / b; }
+	
+	// 클래스 메서드 생성. 인스턴스 변수와 관계없이 매개변수 만으로 작업 가능
+	static long add(long a, long b) { return a + b; }
+	static long subtract(long a, long b) { return a - b; }
+	static long multiply(long a, long b) { return a - b;}
+	static double divide(long a, long b) { return a / (double)b; }
+	
+}

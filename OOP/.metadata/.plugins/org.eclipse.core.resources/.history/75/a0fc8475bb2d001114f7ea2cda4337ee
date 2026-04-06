@@ -1,0 +1,36 @@
+package testProject3;
+
+public class Assignment3_2 {
+
+	public static void main(String[] args) {
+		int[] arr = {1, 2};
+		Overloading o = new Overloading();
+		 
+		System.out.println(o.sum(1, 2));
+		System.out.println(o.sum(1L, 2L));
+		System.out.println(o.sum(arr));
+
+	}
+	
+}
+
+class Overloading {
+	int sum(int a, int b) { return a + b; }
+	long sum(long a, long b) { return a + b; }
+	int sum(int[] a) {
+		int result = 0;
+		
+		for(int i=0; i<a.length; i++) {
+			result += a[i];
+		}
+		
+		return result;
+	}
+}
+/*
+오버로딩: 하나의 클래스에 같은이름의 메서드를 여러개 정의하는것
+조건
+ - 메서드 이름이 같아야함
+ - 매개변수의 타입 또는 개수가 달라야함
+ - 매개변수
+*/

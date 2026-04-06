@@ -77,5 +77,6 @@ baseStack
  - baseStack[i] == top + 1 - inputSize
    ㄴ inputSize == top + 1 - baseStack[i]
    ㄴ inputSize == top + 1 - basePeek
+   ㄴ inputSize == top + 1 - basePop
 
 top 부터 len만큼

@@ -172,12 +172,11 @@ void popAndReverseMessage() {
     }
 
     // 코드 작성 : top과 basePop을 통해 직전 입력 메시지를 거꾸로 출력하고 스택에서 삭제
-    int len = top + 1 - basePeek();
+    int len = top + 1 - basePop();
     for(int i=0; i<len; i++)
     {
         printf("%c", pop());
     }
-    basePop();
 
     printf("\n");
 }
@@ -199,12 +198,12 @@ void popAndShiftMessage() {
     {
         tmpPush(pop()+1);
     }
-    while((tmpTop+1))
+    while(tmpTop+1)
     {
         printf("%c", tmpPop());
     }
     basePop();
-
+    
     printf("\n");
 }
 
@@ -224,7 +223,7 @@ void peekMaskedMessage() {
     {
         printf("*");
     }
-    
+
     printf("\n"); 
 }
 
@@ -282,6 +281,7 @@ int main() {
                 
                 // 코드 작성 : answer 값에 현재 스택에 쌓여있는 단어(메시지)의 총 개수를 할당.
                 answer = baseTop + 1;
+
 
                 printf("현재 저장된 메시지 매수 : %d\n", answer);
                 break;

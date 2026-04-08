@@ -193,7 +193,7 @@ void popAndShiftMessage() {
     }
 
     // 코드 작성 : TmpStack을 활용하여 메시지를 원래 순서대로 맞추고, 각 문자에 +1을 더해 출력.(예 : abc -> bcd)
-    int len = top + 1 - basePeek();
+    int len = top + 1 - basePop();
     for(int i=0; i<len; i++)
     {
         tmpPush(pop()+1);
@@ -202,7 +202,6 @@ void popAndShiftMessage() {
     {
         printf("%c", tmpPop());
     }
-    basePop();
     
     printf("\n");
 }

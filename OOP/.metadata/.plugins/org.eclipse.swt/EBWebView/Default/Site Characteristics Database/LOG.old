@@ -1,3 +1,5 @@
-2026/04/01-18:12:09.760 5114 Reusing MANIFEST C:\Users\Jibeom\Desktop\Code\OOP\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/MANIFEST-000001
-2026/04/01-18:12:09.765 5114 Recovering log #3
-2026/04/01-18:12:09.766 5114 Reusing old log C:\Users\Jibeom\Desktop\Code\OOP\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/000003.log 
+2026/04/09-14:01:24.320 1454 Log #3: 5 ops saved to Table #4 OK
+2026/04/09-14:01:24.334 1454 Archiving C:\Users\Jibeom\Desktop\Code\OOP\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/000003.log: OK
+2026/04/09-14:01:24.334 1454 Table #4: 5 entries OK
+2026/04/09-14:01:24.339 1454 Archiving C:\Users\Jibeom\Desktop\Code\OOP\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/MANIFEST-000001: OK
+2026/04/09-14:01:24.396 1454 **** Repaired leveldb C:\Users\Jibeom\Desktop\Code\OOP\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database; recovered 1 files; 236 bytes. Some data may have been lost. ****

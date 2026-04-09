@@ -70,8 +70,13 @@ hello
 
 Stack - 
 
-TmpStack - 스택 임시 저장
+tmpStack - 스택 임시 저장
 
-BaseStack[i] = k
- ㄴ> i == 단어의 개수
-     k == 글자 수
+baseStack
+ - index == 단어 개수 == baseTop
+ - baseStack[i] == top + 1 - inputSize
+   ㄴ inputSize == top + 1 - baseStack[i]
+   ㄴ inputSize == top + 1 - basePeek
+   ㄴ inputSize == top + 1 - basePop
+
+top 부터 len만큼

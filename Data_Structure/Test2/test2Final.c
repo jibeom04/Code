@@ -172,6 +172,11 @@ void popAndReverseMessage() {
     }
 
     // 코드 작성 : top과 basePop을 통해 직전 입력 메시지를 거꾸로 출력하고 스택에서 삭제
+    int wordIndex = basePop(); // basePop() 을 통해 base스텍의 맨위에 있는 값을 반환하고 삭제. 반환된값을 worldIndex에 저장.
+    while(top >= wordIndex)    // wordIndex에 있는값이 입력받기 시작했을때 top (stack의 인덱스) 이므로
+    {                          // (top == wordIndex) 가 될때까지 pop()을 통해 stack에 있는 값 출력 및 삭제
+        printf("%c", pop());   // 스택은 후입선출 이기 때문에 pop을 하면 단어가 거꾸로 출력됨
+    }
     printf("\n");
 }
 
@@ -187,6 +192,17 @@ void popAndShiftMessage() {
     }
 
     // 코드 작성 : TmpStack을 활용하여 메시지를 원래 순서대로 맞추고, 각 문자에 +1을 더해 출력.(예 : abc -> bcd)
+    int wordIndex = basePop();  //  basePop() 을 통해 base스텍의 맨위에을 있는 값을 반환하고 삭제. 반환된 값을 worldIndex에 저장.
+    while(top >= wordIndex)     //  wordIndex에 있는값이 입력받기 시작했을때 top (stack의 인덱스) 이므로
+                                //  (top == wordIndex) 가 될때까지 pop()을 통해 stack에 있는 값을 삭제하고
+    {                           //  반환된 값을 tmpStack에 push. 다음단어가 출력돼야 되기 떄문에 +1을 해줌.
+        tmpPush(pop() + 1);     //  스택은 후입선출이기 때문에 그냥 pop을하면 단어가 거꾸로 출력됨
+    }
+    while(!isTmpEmpty())
+    {
+        printf("%c", tmpPop());  //  따라서 tmpStack에 단어를 저장했다 출력
+    }
+    
     printf("\n");
 }
 
@@ -201,6 +217,12 @@ void peekMaskedMessage() {
     }
     
     // 코드 작성 : 메시지를 삭제하지 않고, 가장 최근에 입력된 단어의 길이만큼 '*' 출력.
+    int wordLenth = top + 1 - basePeek();  // 메세지를 삭제하지 않기때문에 값을 확인하고 삭제하지 않는 basePeek() 사용.
+    for(int i=0; i<wordLenth; i++)         // baseStack에 push할 때 (top + 1 - inputSize)를 인자로 줌.
+    {                                      // 따라서 top + 1 - basePeek()을 해주면inputSize가 됨.
+        printf("*");                       // 단어의 길이만큼 * 출력
+    }
+
     printf("\n"); 
 }
 
@@ -257,6 +279,7 @@ int main() {
                 int answer = 0;
                 
                 // 코드 작성 : answer 값에 현재 스택에 쌓여있는 단어(메시지)의 총 개수를 할당.
+                answer = baseTop + 1;  // 단어가 입력될 때 마다 basePush를 하므로 (baseTop + 1)이 단어의 개수가 됨.
 
                 printf("현재 저장된 메시지 매수 : %d\n", answer);
                 break;
